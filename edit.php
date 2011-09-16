@@ -2,6 +2,7 @@
 
 	//start
 	//Create Git Repo
+	//Test commit
 	
 	$root_dir = $_SERVER['DOCUMENT_ROOT'];
 	
