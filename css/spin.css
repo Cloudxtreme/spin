@@ -1,0 +1,106 @@
+@charset "utf-8";
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* не забываем это свойство для html и body */
+}
+#conteiner {
+    position: relative;
+    min-height: 100%; /* минимальная высота контейнера, ее понимают все браузеры за исключением IE6 */
+}
+/* ниже фильтр * html так называемый CSS хак, через который можно задать любое свойство предназначенное для IE6 */
+* html #conteiner {
+    height: 100%;
+}
+/* элемент ниже позволяет не наезжать подвалу на контент, он должен быть не меньше подвала по высоте */
+#footer {
+    background-color:#FFFFFF;
+    position: relative;
+    margin-top: -11em; /* свойство должно быть равным высоте элемента, не забываем про отрицательное значение */
+    height: 11em;
+}
+a:link {
+	color: #0000FF;
+}
+a:hover {
+	color: #3366FF;
+}
+a:visited {
+	color: #333333;
+}
+a:active {
+	color: #3366FF;
+}
+a.err {
+	color: orange;
+	font: bold;
+}
+a.err:hover {
+	color: #ffc24f;
+	font: bold;
+}
+a.err:active {
+	color: #ffc24f;
+	font: bold;
+}
+a.err:visited {
+	color: orange;
+	font: bold;
+}
+body {
+	font-family: "Trebuchet MS",Helvetica,Jamrul,sans-serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #333333;
+}
+img {
+	border: none;
+}
+hr {
+	size: 1px;
+}
+
+#live_cnt {
+	opacity: 0.2;
+	width: auto;
+	float: left;
+}
+
+#spacer {
+	text-align: center;
+	padding: 40px 0px;
+	padding-bottom: 10px;
+}
+
+#btn_div {
+	text-align: center;
+	padding: 40px 0px 40px 0px;
+}
+
+#zaebis {
+	display: none;
+	text-align: center;
+	padding: 0px 0px 20px 0px;
+}
+
+#text {
+	padding: 20px 10px;
+	text-align: left;
+}
+
+#paragraph {
+	width: 700px;
+	margin: auto;
+	color: #8a8a8a;
+}
+
+.work_type {
+	padding: 0px;
+	margin: 0px;
+}
+
+td {
+	padding: 0px 10px;
+	margin: 0px;
+}

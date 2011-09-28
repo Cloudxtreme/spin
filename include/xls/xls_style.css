@@ -1,0 +1,256 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background-color: #fff;
+	font: 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+	width: 100%;
+	height: 100%;
+}
+
+a {
+	color: blue;
+	outline: none;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+p {
+	margin: 0px;
+}
+
+img {
+	border: none;
+}
+
+input {
+	vertical-align: middle;
+	width: 250px;
+}
+
+.radio {
+	width: 18px;
+}
+
+span {
+	font: 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+	text-align: left;
+}
+
+label {
+	font: 12px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+}
+
+#wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+#a {
+	width: 20px;
+}
+
+.start {
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 5px;
+	min-width: 60px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.start:hover {
+	background-color: #ccc;
+}
+
+.table_border {
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 5px;
+	min-width: 60px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table_view {
+	border-bottom: 0px;
+	padding: 0px 5px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.border {
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 5px;
+	min-width: 60px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	height: 40px;
+}
+
+.border_gray {
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 5px;
+	min-width: 60px;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FAFAFA;
+	height: 40px;
+}
+
+.view {
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 5px;
+	min-width: 60px;
+	text-align: left;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	height: 40px;
+	width: 1000px;
+}
+
+.view_gray {
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 5px;
+	min-width: 60px;
+	text-align: left;
+	vertical-align: middle;
+	background-color: #FAFAFA;
+	height: 40px;
+	width: 1000px;
+}
+
+#start_body {
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 5px;
+	min-width: 60px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#border_body {
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 0px 5px;
+	min-width: 60px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#slide_header {
+	float: left;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
+#header {
+	height: 40px;
+	background-color: #fff;
+}
+
+
+/* Middle
+-----------------------------------------------------------------------------*/
+#middle {
+	width: 100%;
+	padding: 0 0 100px;
+	height: 1%;
+}
+#middle:after {
+	content: '.';
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+#container {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+#content {
+	padding: 0 270px 0 270px;
+	margin:auto;
+}
+#gray{
+	border: 3px double #ccc;
+	background-color: #eef;
+	text-align: center;
+	vertical-align: middle;
+	float: left;
+	margin: 10px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+#center {
+	border: 0px;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+#grid{
+	border-collapse: collapse;
+	border: 3px double #ccc;
+	background-color: #fff;
+	text-align: left;
+	vertical-align: middle;
+	padding: 0px;
+	margin: 0px;
+}
+#uno {
+	margin: 10px 20px 2px 20px;
+	vertical-align: middle;
+}
+/* Sidebar Left
+-----------------------------------------------------------------------------*/
+.sl {
+	float: left;
+	width: 250px;
+	margin-left: -100%;
+	position: relative;
+	background-color: #fff;
+}
+
+/* Sidebar Right
+-----------------------------------------------------------------------------*/
+.sr {
+	float: left;
+	margin-right: -3px;
+	width: 250px;
+	margin-left: -250px;
+	position: relative;
+	background-color: #fff;
+}
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+#footer {
+	width: 1000px;
+	margin: -100px auto 0;
+	height: 100px;
+	background-color: #fff;
+	text-align: right;
+}
