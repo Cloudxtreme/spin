@@ -17,7 +17,7 @@
 	if ($result_list_name->num_rows > 0)
 	{
 		while ($row_list_name = $result_list_name->fetch_assoc()) {
-			echo "<option value=\"".$row_list_name['id']."\">".$row_list_name['full_name']."</option>\r\n";
+			echo "<option class=\"event_class\" value=\"".$row_list_name['id']."\">".$row_list_name['full_name']."</option>\r\n";
 		}
 	} else
 	{

@@ -11,7 +11,7 @@
 
 	//require("include/functions.php");
 
-	$db_host = "localhost";
+	$db_host = "p:localhost";
 	$db_user = "webmaster";
 	$db_pass = "414045";
 	$db_name = "spin_zp";

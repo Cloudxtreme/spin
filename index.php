@@ -5,7 +5,7 @@
 	include_once $root_dir."include/PhpConsole.php";
 	PhpConsole::start();
 	
-	debug($root_dir, "root_dir");
+	//debug($root_dir, "root_dir");
 
 	include_once $root_dir."include/mysql.php";
 	

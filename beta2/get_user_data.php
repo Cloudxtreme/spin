@@ -26,18 +26,19 @@
 	
 		if ($result->num_rows > 0)
 		{
-			$row_user_data = $result_user_data->fetch_assoc()) {
-			echo "<script type=\"text/javascript\">";
-			echo "\t set_user_data(\"fio_input\", ".$row_user_data['full_name'].");\r\n";
-			echo "</script>";
-		}
+			$row_user_data = $result_user_data->fetch_assoc())
+			{
+				echo "<script type=\"text/javascript\">";
+				echo "\t set_user_data(\"fio_input\", ".$row_user_data['full_name'].");\r\n";
+				echo "</script>";
 			}
 		} else
 		{
 			//add user function
 			echo "Хуйня случилась. Критичная.";
 		}
-	} else {
+	} else
+	{
 		echo "Ошибка входных параметров";
 	}
 ?>

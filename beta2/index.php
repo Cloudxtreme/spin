@@ -25,23 +25,39 @@
 	<meta name="description" content="Spin Music Grid System" />
 	<meta name="keywords" content="Spin Music Grid System" />
 	<meta name="robots" content="none" />
+	
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/text.css" />
 	<link rel="stylesheet" href="css/960.css" />
 	<link rel="stylesheet" href="css/custom.css" />
+	
+	<link rel="stylesheet" href="css/jquery_ui/jquery.ui.theme.css">
+	<link rel="stylesheet" href="css/jquery_ui/jquery.ui.base.css">
+	
 	<?php if (DEBUG): echo "<link rel=\"stylesheet\" href=\"css/debug.css\" />\r\n"; endif; ?>
-	<script type="text/JavaScript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	
+	<script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.js"></script>
+	
+	<script type="text/JavaScript" src="js/jquery-ui-1.8.16.custom.js"></script>
+
+	<script type="text/JavaScript" src="js/jquery.ui.datepicker.js"></script>
+	<script type="text/JavaScript" src="js/jquery.ui.datepicker-ru.js"></script>
+
 	<script type="text/JavaScript" src="js/functions.js"></script>
 	<script>
-		$("#users_list").change(function () {
+		$("#users_list").change(function() {
 			ajax_add_peple();
 		})
 		.change();
+		
+		$(".event_class").change(function() {
+			alert("Handler for .change() called.");
+		});
 	</script>
 </head>
 
-<body onload="update_user_list(); update_event_list();">
-<span id="error_block" style="font-weight: bold; display: none;">Pasring Database error, 10045Er</span>
+<body onload="update_user_list(); update_event_list(); cblink('error_block'); ">
+<span id="error_block" style="font-weight: bold; display: none;">Mysql query rejected, 10073Er</span><br />
 
 <div class="container_12">
 	<form id="edit_from" method="post" action="edit.php">
@@ -65,7 +81,7 @@
 	
 		<div class="grid_4">
 			<select id="event_list" name="event" style="width: 300px;" onChange="update_event_list();">
-				<option value="0" onChange="update_event_list();">Новое меропприятие</option>
+				<option value="0" onChange="update_event_list();">Новое мероприятие</option>
 			</select>
 		</div>
 		<!-- end .grid_7 -->
@@ -108,7 +124,7 @@
 	
 		<div id="button_block" class="grid_2 hide">
 			<span style="text-weight: bold;"></span><br />
-			<input type="button" value="O.K." style="width: 100px;"  onclick="edit_add(); " />
+			<input type="button" value="O.K." style="width: 100px;" onclick="edit_add(); " />
 		</div>
 		<!-- end .grid_2 -->
 		
@@ -122,19 +138,25 @@
 
 		<div id="event_name_block" class="grid_3 hide">
 			<span style="text-weight: bold;">Название мероприятия</span><br />
-			<input type="text" id="event_name" style="width: 200px;" />
+			<input type="text" id="event_name" name="event_name" style="width: 200px;" />
 		</div>
 		<!-- end .grid_3 -->
 		
 		<div id="event_datein_block" class="grid_2 hide">
 			<span style="text-weight: bold;">Дата начала</span><br />
-			<input type="text" id="event_datein" style="width: 130px;" />
+			<input type="text" id="event_datein" name="event_datein" style="width: 110px;" />
+			<a id="calendar_img_in" href="#" title="Выбрать дату начала мероприятия" onmouseover="this.style.cursor='pointer';" >
+				<img id="datapicker_in" src="img/calendar_edit.png" alt="" style="margin-bottom: 3px;" />
+			</a>
 		</div>
 		<!-- end .grid_2 -->
 		
 		<div id="event_dateout_block" class="grid_2 hide">
 			<span style="text-weight: bold;">Дата окончания</span><br />
-			<input type="text" id="event_dateout" style="width: 130px;" />
+			<input type="text" id="event_dateout" name="event_dateout" style="width: 110px;" />
+			<a id="calendar_img_out" href="#" title="Выбрать дату окончания мероприятия" onmouseover="this.style.cursor='pointer';" >
+				<img id="datapicker_out" src="img/calendar_edit.png" alt="" style="margin-bottom: 3px;" />
+			</a>
 		</div>
 		<!-- end .grid_2 -->
 
@@ -148,7 +170,7 @@
 		
 		<div id="event_add_users_button_block" class="grid_2 hide">
 			<span style="text-weight: bold;"></span><br />
-			<input type="button" value="O.K." style="width: 100px;"  onclick="edit_add_users_to_event(); " />
+			<input type="button" value="O.K." style="width: 100px;"  onclick="add_new_event_f(); " />
 		</div>
 		<!-- end .grid_2 -->
 		

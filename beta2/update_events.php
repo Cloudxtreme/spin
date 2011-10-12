@@ -23,7 +23,7 @@
 	} else
 	{
 		echo "<option>Нет данных</option>";
-		debug($sql_list_name, "Херня произошла");
+		if (DEBUG): debug($sql_list_name, "Херня произошла"); endif;
 	}
 	
 	$result_list_name->free();

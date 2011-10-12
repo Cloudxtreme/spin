@@ -7,7 +7,7 @@
 	include_once $root_dir."include/PhpConsole.php";
 	PhpConsole::start();
 	
-	//debug($root_dir, "root_dir");
+	if (DEBUG): debug($root_dir, "root_dir"); endif;
 
 	include_once $root_dir."include/mysql.php";
 	
@@ -20,7 +20,10 @@
 		$radio_block = $mysqli->real_escape_string($_POST['radio_block']);
 		
 		//ok
-		$result = $mysqli->query("SELECT id, full_name FROM users WHERE full_name='".$fio_block."'") or die($mysqli->error);
+		$sql_string = "SELECT id, full_name FROM users WHERE full_name='".$fio_block."'";
+		$result = $mysqli->query($sql_string) or die($mysqli->error);
+		
+		if (DEBUG): debug($sql_string); endif;
 	
 		if ($result->num_rows > 0)
 		{
@@ -34,7 +37,7 @@
 			
 			if (isset($_POST['update']) && ($_POST['update']))
 			{
-				$query = "UPDATE users SET full_name='".$fio_block."', work_group='".$radio_block."', oklad='".$oklad_block."', stavka='".$stavka_block."';");
+				$query = "UPDATE users SET full_name='".$fio_block."', work_group='".$radio_block."', oklad='".$oklad_block."', stavka='".$stavka_block."';";
 			} else {
 				$query = "INSERT INTO users (full_name, work_group, create_date, oklad, stavka) 
 										VALUES ('".$fio_block."', '".$radio_block."', CURRENT_TIMESTAMP, ".$oklad_block.", ".$stavka_block.")";
@@ -44,13 +47,13 @@
 			if ($mysqli->error)
 			{
 				$critical_error = true;
-				debug($mysqli->error, $mysqli->errno);
-				debug($query);
+				if (DEBUG): debug($mysqli->error, $mysqli->errno); endif;
+				if (DEBUG): debug($query); endif;
 				exit;
 			} else
 			{
 				//echo "Новый пользователь успешно добавлен";
-				echo "<span style=\"background-color: #90ee90;\">Новый пользователь успешно добавлен</span>";
+				echo "<span style=\"color: #0e831e; font-weight: bold;\">Новый пользователь успешно добавлен</span>";
 			}
 		}
 	} else {
